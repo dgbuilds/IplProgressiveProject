@@ -29,7 +29,7 @@ public class TeamServiceImplArraylist implements TeamService {
     public List<Team> getAllTeamsSortedByName() {
         // TODO Auto-generated method stub
         List<Team> sortedTeam = teamList;
-        sortedTeam.sort(Comparator.comparing(Team::getTeam_name));
+        sortedTeam.sort(Comparator.comparing(Team::getTeamName));
         return sortedTeam;
     }
 

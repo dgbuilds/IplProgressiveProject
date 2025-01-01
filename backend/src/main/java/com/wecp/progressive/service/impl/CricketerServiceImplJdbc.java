@@ -1,5 +1,6 @@
 package com.wecp.progressive.service.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.wecp.progressive.dao.CricketerDAO;
@@ -18,15 +19,17 @@ public class CricketerServiceImplJdbc implements CricketerService {
     }
 
     @Override
-    public List<Cricketer> getAllCricketers() {
+    public List<Cricketer> getAllCricketers() throws SQLException {
         // TODO Auto-generated method stub
-        return List.of();
+        return cricketerDAO.getAllCricketers();
+      
     }
 
     @Override
-    public Integer addCricketer(Cricketer cricketer) {
+    public Integer addCricketer(Cricketer cricketer) throws SQLException {
         // TODO Auto-generated method stub
-        return -1;
+        System.out.println("service impl jdbc add cricketer");
+        return cricketerDAO.addCricketer(cricketer);
     }
 
     @Override
@@ -36,18 +39,18 @@ public class CricketerServiceImplJdbc implements CricketerService {
     }
 
     @Override
-    public void updateCricketer(Cricketer cricketer) {
-
+    public void updateCricketer(Cricketer cricketer) throws SQLException {
+        cricketerDAO.updateCricketer(cricketer);
     }
 
     @Override
-    public void deleteCricketer(int cricketerId) {
-
+    public void deleteCricketer(int cricketerId) throws SQLException {
+        cricketerDAO.deleteCricketer(cricketerId);
     }
 
     @Override
-    public Cricketer getCricketerById(int cricketerId) {
-        return null;
+    public Cricketer getCricketerById(int cricketerId) throws SQLException {
+        return cricketerDAO.getCricketerById(cricketerId);
     }
 
 }

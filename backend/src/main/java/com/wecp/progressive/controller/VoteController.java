@@ -2,10 +2,12 @@ package com.wecp.progressive.controller;
 
 import com.wecp.progressive.entity.Vote;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
 
+@RestController
 public class VoteController {
 
     public ResponseEntity<List<Vote>> getAllVotes() {
